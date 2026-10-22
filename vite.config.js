@@ -8,11 +8,12 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  base: '/luma-live/',
   server: {
     proxy: {
-      '/api': 'http://localhost:3001',
+      '/api': 'https://backend-for-live-meet.vercel.app',
       '/socket.io': {
-        target: 'http://localhost:3001',
+        target: 'https://backend-for-live-meet.vercel.app',
         ws: true,
       },
     },
